@@ -7,7 +7,14 @@ function ProdudctList() {
       <section className="pt-4">
         <div className="container px-lg-5">
           {/* Page Features*/}
-          <ProductItem />
+          <div className="row gx-lg-5">
+            <ProductItem />
+            <ProductItem />
+            <ProductItem />
+            <ProductItem />
+            <ProductItem />
+            <ProductItem />
+          </div>
         </div>
       </section>
     </div>
