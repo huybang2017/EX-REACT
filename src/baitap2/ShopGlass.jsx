@@ -1,11 +1,11 @@
 import React from "react";
-import Footer from "./Footer";
+import Carousel from "./Carousel";
 import Header from "./Header";
 
 function ShopGlass() {
   return <div>
     <Header/>
-    <Footer/>
+    <Carousel/>
   </div>;
 }
 
