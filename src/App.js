@@ -1,10 +1,10 @@
 import React from "react";
-import ShopShoe from "./baitap3/ShopShoe";
+import ManagementPhone from "./baitap4/ManagementPhone";
 
 function App() {
   return (
     <div>
-      <ShopShoe />
+      <ManagementPhone />
     </div>
   );
 }
