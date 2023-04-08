@@ -1,17 +1,30 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 
-function TablePhone({ data, handleDelete, handleUpdate, onsubmit }) {
-  // const [search, setSearch] = useState("");
-  // const handleChange = (evt) => {
-  //   setSearch(evt.target.value);
-  // };
+function TablePhone({ data, handleDelete, handleUpdate, onSearch }) {
+  const [search, setSearch] = useState("");
+  const handleChange = (evt) => {
+    setSearch(evt.target.value);
+    console.log(evt.target.value);
+    // let myRef = useRef(0);
+    // myRef.current = setTimeout(setSearch,500);
+    // clearTimeout(myRef.current);
+  };
   return (
     <div className="container-fluid">
       <div className="input-group mb-3" style={{ width: "350px" }}>
-        <input type="text" className="form-control" placeholder="Name" />
-        <button className="btn btn-success">Search</button>
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Search"
+          value={search}
+          onChange={handleChange}
+        />
+        <button className="btn btn-success" onClick={() => onSearch(search)}>
+          Search
+        </button>
       </div>
       <div className="table__Phone">
+        {data.isLoading === true && <h1>Loading...</h1>}
         <table className="table table-info">
           <thead>
             <tr>
@@ -24,7 +37,6 @@ function TablePhone({ data, handleDelete, handleUpdate, onsubmit }) {
             </tr>
           </thead>
           <tbody>
-            {data.isLoading === true && <h1>Loading...</h1>}
             {data.data.length > 0 &&
               data.data.map((product) => {
                 return (

@@ -50,7 +50,7 @@ function ManagementPhone() {
     }
   };
   const [updateProduct, setupdateProduct] = useState({
-    id:"",
+    id: "",
     name: "",
     type: "",
     description: "",
@@ -58,10 +58,11 @@ function ManagementPhone() {
     price: "",
   });
   const handleUpdate = (product) => {
-    console.log(product); 
+    console.log(product);
     setupdateProduct(product);
   };
   const handleSubmit = async (product) => {
+    console.log(product);
     try {
       const { id, ...payload } = product;
       if (id) {
@@ -77,7 +78,7 @@ function ManagementPhone() {
       }
       fetchProduct();
       setupdateProduct({
-        id:"",
+        id: "",
         name: "",
         type: "",
         description: "",
@@ -108,7 +109,7 @@ function ManagementPhone() {
             data={state}
             handleDelete={handleDelete}
             handleUpdate={handleUpdate}
-            onsubmit={handleSearch}
+            onSearch={handleSearch}
           />
         </div>
       </div>

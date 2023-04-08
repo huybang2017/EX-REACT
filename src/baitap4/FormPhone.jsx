@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 function FormPhone({ form_product, HandleSubmit }) {
-  const [product, setproduct] = useState({
-    id:"",
+  const [product, setProduct] = useState({
+    id: "",
     name: "",
     type: "",
     description: "",
@@ -10,11 +10,11 @@ function FormPhone({ form_product, HandleSubmit }) {
     price: "",
   });
   useEffect(() => {
-    setproduct(form_product);
+    setProduct(form_product);
   }, [form_product]);
   const handleChange = (evt) => {
     const { value, name } = evt.target;
-    setproduct({ ...product, [name]: value });
+    setProduct({ ...product, [name]: value });
   };
   return (
     <form>
@@ -42,8 +42,8 @@ function FormPhone({ form_product, HandleSubmit }) {
         <input
           type="text"
           className="form-control"
-          placeholder="Description"
-          name="descirption"
+          placeholder="description"
+          name="description"
           value={product.description}
           onChange={handleChange}
         />
@@ -71,15 +71,19 @@ function FormPhone({ form_product, HandleSubmit }) {
       <button
         className="btn btn-success me-3"
         type="submit"
-        onClick={() => HandleSubmit(product)}
+        onClick={(evt) => {
+          evt.preventDefault();
+          HandleSubmit(product);
+        }}
       >
         Submit
       </button>
       <button
         className="btn btn-secondary"
+        type="button"
         onClick={() => {
-          setproduct({
-            id:"",
+          setProduct({
+            id: "",
             name: "",
             type: "",
             description: "",
