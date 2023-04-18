@@ -1,10 +1,10 @@
 import React from "react";
-import ManagementPhone from "./baitap4/ManagementPhone";
+import Movie from "./baitap5/Movie";
 
 function App() {
   return (
     <div>
-      <ManagementPhone />
+      <Movie />
     </div>
   );
 }
