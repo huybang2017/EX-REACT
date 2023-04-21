@@ -15,6 +15,21 @@ function SeatBooking() {
   };
   return (
     <div>
+      <div className="row">
+        <span className="col"></span>
+        <span className="col text-center">1</span>
+        <span className="col text-center">2</span>
+        <span className="col text-center">3</span>
+        <span className="col text-center">4</span>
+        <span className="col text-center">5</span>
+        <span className="col text-center">6</span>
+        <span className="col text-center">7</span>
+        <span className="col text-center">8</span>
+        <span className="col text-center">9</span>
+        <span className="col text-center">10</span>
+        <span className="col text-center">11</span>
+        <span className="col text-center">12</span>
+      </div>
       {seatList.map((item) => {
         return (
           <div className="row" key={item.seatList}>
@@ -25,9 +40,9 @@ function SeatBooking() {
                   key={seat.soGhe}
                   className={
                     seat.daDat
-                      ? "seat occupied col"
+                      ? "seat occupied col bg-danger"
                       : seat.selected
-                      ? "seat selected"
+                      ? "seat selected col bg-info"
                       : "seat col"
                   }
                   onClick={() => handleClick(item.hang, seat.soGhe)}

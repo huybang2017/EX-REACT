@@ -7,16 +7,16 @@ function Movie() {
   return (
     <div>
       <Header />
-      <div className="showcaseContainer mt-3">
-        <ul className="showcase">
+      <div className="showcaseContainer mt-3 text-center">
+        <ul className="showcase" style={{listStyleType:"none"}}>
           <li>
             <span className="seat" /> <small>N/A</small>
           </li>
           <li>
-            <span className="seat selected" /> <small>Selected</small>
+            <span className="seat selected" /> <small className="text-bg-info">Selected</small>
           </li>
           <li>
-            <span className="seat occupied" /> <small>Occupied</small>
+            <span className="seat occupied" /> <small className="text-bg-danger">Occupied</small>
           </li>
         </ul>
       </div>

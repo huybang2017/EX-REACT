@@ -21,7 +21,7 @@ function SeatBill() {
     });
   };
   return (
-    <table className="table text-white" style={{ fontSize: "17px" }}>
+    <table className="table text-white bg-black" style={{ fontSize: "17px" }}>
       <thead>
         <tr>
           <th>Số ghế</th>
